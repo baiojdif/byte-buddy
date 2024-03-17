@@ -33,17 +33,6 @@ jobs:
       run: mvn -pl byte-buddy-dep test -Dtest=net.bytebuddy.description.type.TypeDescriptionForLoadedTypeTest#testGenericTypeInconsistency 
 
  
-
-
-
-    - name: Report
-      uses: dorny/test-reporter@v1
-      if: always()
-      with:
-        name: Maven Tests
-        path: '*.xml' 
-        reporter: java-junit
-        fail-on-error: true
         
     # Optional: Uploads the full dependency graph to GitHub to improve the quality of Dependabot alerts this repository can receive
     - name: Update dependency graph
